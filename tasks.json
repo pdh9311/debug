@@ -6,7 +6,28 @@
 		{
 			"label": "gcc compile",
 			"command": "gcc",
+			"args": ["${file}", "-o", "${fileDirname}/a.out", "-g"],
+			"problemMatcher": ["$gcc"],
+			"group": "build"
+		},
+		{
+			"label": "gcc *.c compile",
+			"command": "gcc",
 			"args": ["${fileDirname}/*.c", "-o", "${fileDirname}/a.out", "-g"],
+			"problemMatcher": ["$gcc"],
+			"group": "build"
+		},
+		{
+			"label": "g++ compile",
+			"command": "g++",
+			"args": ["${file}", "-o", "${fileDirname}/a.out", "-g"],
+			"problemMatcher": ["$gcc"],
+			"group": "build"
+		},
+		{
+			"label": "g++ *.cpp compile",
+			"command": "g++",
+			"args": ["${fileDirname}/*.cpp", "-o", "${fileDirname}/a.out", "-g"],
 			"problemMatcher": ["$gcc"],
 			"group": "build"
 		},
@@ -14,18 +35,6 @@
 			"label": "execute",
 			"command": "${fileDirname}/a.out",
 			"group": "test"
-		},
-		{
-			"label": "g++ compile",
-			"command": "g++",
-			"args": [
-				"${fileDirname}/*.cpp",
-				"-o",
-				"${fileDirname}/a.out",
-				"-g"
-			],
-			"problemMatcher": ["$gcc"],
-			"group": "build"
 		}
 	]
 }
