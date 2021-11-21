@@ -2,13 +2,8 @@
 
 int	func1(void)
 {
-	int	i;
-
-	i = 0;
-	while (i < 10)
-	{
+	for (int i = 0; i < 3; i++)
 		printf("func1.c\n");
-		i++;
-	}
+	printf("\n");
 	return (0);
 }
