@@ -2,37 +2,30 @@
 	"version": "2.0.0",
 	"runner": "terminal",
 	"type": "shell",
-	// "echoCommand": true,
-	// "presentation": { "reveal": "always" },
 	"tasks": [
 		{
-			"label": "CPP: g++ build",
-			"command": "g++",
-			"args": [
-				"$(fileDirname}/*.cpp",
-				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}",
-				"-g"
-			],
-			"problemMatcher": ["$gcc"],
-			"group": "build"
-		},
-		{
-			"label": "C: gcc build",
+			"label": "gcc compile",
 			"command": "gcc",
-			"args": [
-				"${fileDirname}/*.c",
-				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}",
-				"-g"
-			],
+			"args": ["${fileDirname}/*.c", "-o", "${fileDirname}/a.out", "-g"],
 			"problemMatcher": ["$gcc"],
 			"group": "build"
 		},
 		{
 			"label": "execute",
-			"command": "${fileDirname}/${fileBasenameNoExtension}",
+			"command": "${fileDirname}/a.out",
 			"group": "test"
+		},
+		{
+			"label": "g++ compile",
+			"command": "g++",
+			"args": [
+				"${fileDirname}/*.cpp",
+				"-o",
+				"${fileDirname}/a.out",
+				"-g"
+			],
+			"problemMatcher": ["$gcc"],
+			"group": "build"
 		}
 	]
 }
